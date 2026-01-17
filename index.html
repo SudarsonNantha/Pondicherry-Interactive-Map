@@ -417,7 +417,7 @@
         const map = L.map('map').setView([11.9416, 79.8083], 13);
 
         // Set map bounds to focus only on Pondicherry
-        map.setMaxBounds(map.getBounds());
+        //map.setMaxBounds(map.getBounds());
         
         // Set poistion of map zoom control
         map.zoomControl.setPosition('topright');
@@ -509,7 +509,7 @@
                 item.addEventListener('click', function() {
                     const index = this.getAttribute('data-index');
                     const dest = destinations[index];
-                    map.setView([dest.lat, dest.lng], 16);
+                    map.setView([dest.lat, dest.lng], 16.2);
                     markers[index].openPopup();
                 });
             });
