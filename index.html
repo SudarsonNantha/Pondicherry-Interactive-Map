@@ -88,9 +88,11 @@
             height: 100%;
             width: 100%;
         }
-        
+
+        /* Added left padding to make way for toggle button */
         .search-box {
-            padding: 15px;
+            padding: 12px;
+            padding-left: 65px;
             border-bottom: 1px solid #e0e0e0;
         }
         
@@ -199,6 +201,7 @@
             height: 100%;
         }
         
+        /* .leaflet-control-container { position: absolute; right: 56px; }  */
 
         @media (max-width: 768px) {
 
@@ -219,6 +222,7 @@
                 margin-bottom: 0px;
             }
             
+            /* Only show header on mobile */
             .header p {
                 font-size: 0px;
                 opacity: 0.9;
@@ -350,6 +354,9 @@
         // Initialize map centered on Pondicherry
         const map = L.map('map').setView([11.9416, 79.8083], 13);
         
+        // Set poistion of map zoom control
+        map.zoomControl.setPosition('bottomright');
+
         // Add OpenStreetMap tiles
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© OpenStreetMap contributors',
@@ -549,6 +556,16 @@
                 document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
                 this.classList.add('active');
                 activeCategory = this.getAttribute('data-category');
+
+                // Show/hide markers based on category
+                destinations.forEach((dest, index) => {
+                    if (activeCategory === 'all' || dest.category === activeCategory) {
+                        markers[index].addTo(map);
+                    } else {
+                        map.removeLayer(markers[index]);
+                    }
+                });
+        
                 renderDestinations();
             });
         });
