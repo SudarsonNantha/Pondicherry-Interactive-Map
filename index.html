@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pondicherry Tourist Destinations</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
     <style>
         * {
@@ -19,7 +21,6 @@
         
         .header {
             background-image:url("assets/images/background.jpg") ;
-            /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
             color: white;
             padding: 20px;
             text-align: center;
@@ -32,6 +33,10 @@
         }
         
         .header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        .header a {
             font-size: 14px;
             opacity: 0.9;
         }
@@ -202,7 +207,23 @@
             height: 100%;
         }
         
-        /* .leaflet-control-container { position: absolute; right: 56px; }  */
+        a:link {
+        color: blue;
+        background-color: transparent;
+        text-decoration: none;
+        }
+
+        a:visited {
+        color: blue;
+        background-color: transparent;
+        text-decoration: none;
+        }
+
+        a:hover {
+        color: cyan;
+        background-color: transparent;
+        text-decoration: underline;
+        }
 
         @media (max-width: 768px) {
 
@@ -219,13 +240,13 @@
             }
             
             .header h1 {
-                font-size: 20px;
+                font-size: 18px;
                 margin-bottom: 0px;
             }
             
             /* Only show header on mobile */
             .header p {
-                font-size: 0px;
+                font-size: 12px;
                 opacity: 0.9;
             }
 
@@ -299,8 +320,13 @@
 </head>
 <body>
     <div class="header">
-        <h1>🌴 Pondicherry Tourist Destinations</h1>
-        <p>Explore the French Riviera of the East</p>
+        <h1>The Definitive Guide to Pondicherry</h1>
+        <p> 
+            Created by <a href="https://www.reddit.com/r/pondicherry/"> r/pondicherry</a> 
+            <i class="fa fa-brands fa-reddit-alien"></i>
+        </p>
+        
+
     </div>
     
     <div class="container">
@@ -350,12 +376,14 @@
         </div>
     </div>
 
-    
     <script src="destinations.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
     <script>
         // Initialize map centered on Pondicherry
         const map = L.map('map').setView([11.9416, 79.8083], 13);
+
+        // Set map bounds to focus only on Pondicherry
+        map.setMaxBounds(map.getBounds());
         
         // Set poistion of map zoom control
         map.zoomControl.setPosition('bottomright');
