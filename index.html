@@ -544,44 +544,32 @@
         // Toggle sidebar
         const toggleBtn = document.getElementById('toggleBtn');
         const sidebar = document.getElementById('sidebar');
-        let sidebarOpen = window.innerWidth > 768; // Start collapsed on mobile
+        //let sidebarOpen = window.innerWidth > 768; // Start collapsed on mobile
         
-        // Sidebar collapse logic for mobile
+        // Toggle sidebar
         toggleBtn.addEventListener('click', () => {
             sidebar.classList.toggle('open');
         });
-        
-        toggleBtn.addEventListener('click', function() {
-            sidebarOpen = !sidebarOpen;
-            if (sidebarOpen) {
-                sidebar.classList.remove('collapsed');
-                toggleBtn.textContent = '☰';
-            } else {
-                sidebar.classList.add('collapsed');
-                toggleBtn.textContent = '☰';
-            }
-        });
-        
+
         // Auto-close sidebar on mobile when selecting destination
-        document.addEventListener('click', function(e) {
-            if (e.target.closest('.destination-item') && window.innerWidth <= 768) {
-                sidebar.classList.add('collapsed');
-                sidebarOpen = false;
-                toggleBtn.textContent = '☰';
+        document.addEventListener('click', (e) => {
+            if (
+                e.target.closest('.destination-item') &&
+                window.innerWidth <= 768
+            ) {
+                sidebar.classList.remove('open');
             }
         });
-        
+
         // Handle window resize
-        window.addEventListener('resize', function() {
-            if (window.innerWidth > 768 && !sidebarOpen) {
-                sidebar.classList.remove('collapsed');
-                sidebarOpen = true;
-            } else if (window.innerWidth <= 768 && sidebarOpen) {
-                sidebar.classList.add('collapsed');
-                sidebarOpen = false;
-                toggleBtn.textContent = '☰';
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                sidebar.classList.add('open');   // Always open on desktop
+            } else {
+                sidebar.classList.remove('open'); // Always closed on mobile
             }
         });
+
 
         // Initial render
         renderDestinations();
