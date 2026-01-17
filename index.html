@@ -413,11 +413,18 @@
     <script src="destinations.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
     <script>
-        // Initialize map centered on Pondicherry
-        const map = L.map('map').setView([11.9416, 79.8083], 13);
+        // Approximate bounds around Pondicherry with padding
+        const pondicherryBounds = L.latLngBounds(
+            [11.85, 79.70], // Southwest corner
+            [12.05, 79.95]  // Northeast corner
+        );
 
-        // Set map bounds to focus only on Pondicherry
-        //map.setMaxBounds(map.getBounds());
+        // Initialize map
+        const map = L.map('map', {
+            maxBounds: pondicherryBounds,
+            maxBoundsViscosity: 0.6 // Smooth resistance instead of hard stop
+        }).setView([11.9416, 79.8083], 13);
+
         
         // Set poistion of map zoom control
         map.zoomControl.setPosition('topright');
