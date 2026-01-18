@@ -1,3 +1,10 @@
-name,lat,lng,description,category,subCategory,link
-Rock Beach,11.927,79.8314,"A 1.5 km long stretch along the Bay of Bengal, perfect for evening strolls with French colonial architecture.",beach,main,"https://www.google.com/maps/place/Promenade+Beach,+Pondicherry"
-Pondy Marina Beach,11.915,79.8314,Rip off of a beach in Chennai,beach,secondary,
+name,coordinates,description,category,subCategory,link
+Promenade Beach,"11.931431413763924, 79.83606797917007","A 1.5 km long stretch along the Bay of Bengal, perfect for evening strolls with French colonial architecture.",beach,,https://maps.app.goo.gl/fCnoR5SFwYmQxWnZ9
+Pondy Marina Beach,"11.909228948551718, 79.83007227791347",Rip off of a beach in Chennai,beach,,https://maps.app.goo.gl/AfhHVyo7eVnwEEfC9
+Paradise Beach,"11.872367048817132, 79.82007396636845","A pristine beach accessible by boat, known for its golden sands and clear waters.",beach,,https://maps.app.goo.gl/rufWef4qwV4YPnQt5
+Serenity Beach,"11.969236686365763, 79.84459938985853",Popular surfing destination with laid-back beach shacks and surf schools.,beach,,https://maps.app.goo.gl/F6w3gQpVLMb5dMwg7
+Sri Aurobindo Ashram,"11.936959112352222, 79.83485528715974","Founded in 1926, this spiritual community attracts seekers from around the world.",attraction,spiritual,https://maps.app.goo.gl/B3kJEqd767dVCGQg9
+Sacred Heart Basilica,"11.926283730514424, 79.8275188681188","Gothic-style church built in the 1900s, featuring beautiful stained glass panels.",attraction,spiritual,https://maps.app.goo.gl/7Qu2hbHky311xjHT7
+Botanical Garden,"11.930528700891681, 79.82276392024244","22-acre garden dating back to 1826, featuring rare plant species and musical fountains.",attraction,nature,https://maps.app.goo.gl/L8qdcxWwVMqVniSX9
+Chunnambar Boat House,"11.88395947266875, 79.80124539695404",Backwater paradise offering boating experiences through mangrove forests.,attraction,nature,https://maps.app.goo.gl/d7mFAzCBR42An54Q7
+Manakula Vinayagar Temple,"11.936059003824385, 79.83445603133771","300-year-old temple dedicated to Lord Ganesha, known for its elephant Lakshmi.",attraction,spiritual,https://maps.app.goo.gl/yh56iKHtUPPopzdR8

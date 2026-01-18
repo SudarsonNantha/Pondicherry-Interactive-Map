@@ -8,10 +8,15 @@ def csv_to_js(csv_file, js_file):
     with open(csv_file, 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f)
         for row in reader:
+            # Parse coordinates from "lat, lng" format
+            coords = row['coordinates'].strip().split(',')
+            lat = float(coords[0].strip())
+            lng = float(coords[1].strip())
+            
             destination = {
                 'name': row['name'],
-                'lat': float(row['lat']),
-                'lng': float(row['lng']),
+                'lat': lat,
+                'lng': lng,
                 'description': row['description'],
                 'category': row['category']
             }
