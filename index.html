@@ -9,6 +9,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
     <style>
+        :root {
+            --primary-color: white;
+            --secondary-color: #f5f5f5;
+            --accent1-color: #667eea;
+            --accent2-color: #338577;
+            --accent2-color: #38b09c;
+            --border-color: #e0e0e0;
+
+            --txt1-active-color: white;
+            --txt1-inactive-color: black;
+
+            --txt2-active-color: white;
+            --txt2-inactive-color: black;            
+
+            --header-color: #333;
+            --font-color: #666;
+        }
         * {
             margin: 0;
             padding: 0;
@@ -17,12 +34,12 @@
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f5f5f5;
+            background: var(--secondary-color);
         }
         
         .header {
             background-image:url("assets/images/background.jpg") ;
-            color: white;
+            color: var(--primary-color);
             padding: 20px;
             text-align: center;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -46,7 +63,7 @@
         
         .sidebar {
             width: 350px;
-            background: white;
+            background: var(--primary-color);
             box-shadow: 2px 0 10px rgba(0,0,0,0.1);
             display: flex;
             flex-direction: column;
@@ -67,7 +84,7 @@
             position: absolute;
             top: 10px;
             left: 10px;
-            background: white;
+            background: var(--primary-color);
             border: none;
             padding: 10px 15px;
             border-radius: 8px;
@@ -79,7 +96,7 @@
         }
         
         .toggle-btn:hover {
-            background: #f5f5f5;
+            background: var(--secondary-color);
         }
         
         .toggle-btn:active {
@@ -96,13 +113,13 @@
         .search-box {
             padding: 12px;
             padding-left: 65px;
-            border-bottom: 1px solid #e0e0e0;
+            border-bottom: 1px solid var(--border-color);
         }
         
         .search-box input {
             width: 100%;
             padding: 10px 15px;
-            border: 2px solid #e0e0e0;
+            border: 2px solid var(--border-color);
             border-radius: 25px;
             font-size: 14px;
             transition: border-color 0.3s;
@@ -110,18 +127,18 @@
         
         .search-box input:focus {
             outline: none;
-            border-color: #667eea;
+            border-color: var(--accent1-color);
         }
         
         .filters {
             padding: 15px;
-            border-bottom: 1px solid #e0e0e0;
+            border-bottom: 1px solid var(--border-color);
         }
         
         .filters h3 {
             font-size: 14px;
             margin-bottom: 10px;
-            color: #333;
+            color: var(--header-color);
         }
         
         .filter-buttons {
@@ -132,8 +149,9 @@
         
         .filter-btn {
             padding: 6px 12px;
-            border: 2px solid #e0e0e0;
-            background: white;
+            border: 2px solid var(--border-color);
+            background: var(--primary-color);
+            color: var(--txt1-inactive-color);
             border-radius: 20px;
             font-size: 12px;
             cursor: pointer;
@@ -141,13 +159,33 @@
         }
         
         .filter-btn:hover {
-            background: #f5f5f5;
+            background: var(--border-color);
         }
         
         .filter-btn.active {
-            background: #667eea;
-            color: white;
-            border-color: #667eea;
+            background: var(--accent1-color);
+            color: var(--txt1-active-color);
+            border-color: var(--accent1-color);
+        }
+
+        .subfilter-btn {
+            padding: 6px 12px;
+            border: 2px solid var(--accent1-color);
+            background: var(--primary-color);
+            border-radius: 20px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .subfilter-btn:hover {
+            background: var(--secondary-color);
+        }
+        
+        .subfilter-btn.active {
+            background: var(--accent2-color);
+            color: var(--txt2-active-color);
+            border-color: var(--accent1-color);
         }
         
         .destinations-list {
@@ -157,8 +195,8 @@
         }
         
         .destination-item {
-            background: white;
-            border: 1px solid #e0e0e0;
+            background: var(--primary-color);
+            border: 1px solid var(--border-color);
             border-radius: 8px;
             padding: 12px;
             margin-bottom: 10px;
@@ -173,7 +211,7 @@
         
         .destination-item h4 {
             font-size: 15px;
-            color: #333;
+            color: var(--header-color);
             margin-bottom: 5px;
             display: flex;
             align-items: center;
@@ -189,14 +227,14 @@
         
         .destination-item p {
             font-size: 12px;
-            color: #666;
+            color: var(--font-color);
             line-height: 1.4;
         }
         
         .no-results {
             text-align: center;
             padding: 40px 20px;
-            color: #999;
+            color: var(--font-color);
         }
         
         #map {
@@ -235,19 +273,19 @@
         }
 
         .leaflet-control-zoom  a:link, .leaflet-control-zoom  a:visited {
-            background-color: white;
-            color: black;
+            background-color: var(--primary-color);
+            color: var(--header-color);
         }
 
         .leaflet-control-zoom  a:hover{
-            background-color: #f5f5f5;
+            background-color: var(--secondary-color);
             color: black;
             text-decoration: none !important;
         }
 
         .popup-content h3 {
             margin: 0 0 8px 0;
-            color: #667eea;
+            color: var(--header-color);
             font-size: 16px;
         }
         
@@ -255,14 +293,15 @@
             margin: 0;
             font-size: 13px;
             line-height: 1.5;
-            color: #555;
+            color: var(--font-color);
         }
         
         .legend {
             position: absolute;
             bottom: 30px;
             right: 10px;
-            background: white;
+            background: var(--primary-color);
+            color: var(--font-color);
             padding: 15px;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -274,7 +313,7 @@
         .legend h4 {
             margin: 0 0 10px 0;
             font-size: 14px;
-            color: #333;
+            color: var(--header-color);
         }
         
         .legend-item {
@@ -293,8 +332,6 @@
         @media (max-width: 768px) {
 
             .header {
-                /* background: linear-gradient(135deg, #667111 0%, #764ba2 100%); */
-                color: white;
                 padding: 15px;
                 text-align: center;
                 box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -367,12 +404,35 @@
                 <h3>Filter by Category</h3>
                 <div class="filter-buttons">
                     <button class="filter-btn active" data-category="all">All</button>
-                    <button class="filter-btn" data-category="heritage">Heritage</button>
-                    <button class="filter-btn" data-category="beach">Beach</button>
-                    <button class="filter-btn" data-category="spiritual">Spiritual</button>
-                    <button class="filter-btn" data-category="nature">Nature</button>
-                    <button class="filter-btn" data-category="restaurant">Restaurant</button>
-                    <button class="filter-btn" data-category="hotel">Hotel</button>
+                    <button class="filter-btn" data-category="food" data-parent="true" data-subfilterId="foodSubFilters">Food</button>
+                    <button class="filter-btn" data-category="nightlife">Nightlife</button>
+                    <button class="filter-btn" data-category="beach">Beaches</button>
+                    <button class="filter-btn" data-category="attraction" data-parent="true" data-subfilterId="attractionSubFilters">Attractions</button>
+                    <button class="filter-btn" data-category="transport" data-parent="true" data-subfilterId="transportSubFilters">Transport</button>
+                    <button class="filter-btn" data-category="tourist">Tourist</button>
+                </div>
+                <div class="sub-filters" id="foodSubFilters" style="display: none; margin-top: 10px;">
+                    <div class="filter-buttons">
+                        <button class="subfilter-btn" data-category="breakfast" data-parent-category="food">Breakfast</button>
+                        <button class="subfilter-btn" data-category="lunch" data-parent-category="food">Lunch</button>
+                        <button class="subfilter-btn" data-category="dinner" data-parent-category="food">Dinner</button>
+                        <button class="subfilter-btn" data-category="cafe" data-parent-category="food">Café</button>
+                    </div>
+                </div>
+                <div class="sub-filters" id="attractionSubFilters" style="display: none; margin-top: 10px;">
+                    <div class="filter-buttons">
+                        <button class="subfilter-btn" data-category="heritage" data-parent-category="attraction">Heritage</button>
+                        <button class="subfilter-btn" data-category="spiritual" data-parent-category="attraction">Spiritual</button>
+                        <button class="subfilter-btn" data-category="nature" data-parent-category="attraction">Nature</button>
+                        <button class="subfilter-btn" data-category="adventure" data-parent-category="attraction">Adventure Sports</button>
+                    </div>
+                </div>
+                <div class="sub-filters" id="transportSubFilters" style="display: none; margin-top: 10px;">
+                    <div class="filter-buttons">
+                        <button class="subfilter-btn" data-category="scooty" data-parent-category="transport">Scooty Rentals</button>
+                        <button class="subfilter-btn" data-category="cab" data-parent-category="transport">Cabs</button>
+                        <button class="subfilter-btn" data-category="bus" data-parent-category="transport">Buses</button>
+                    </div>
                 </div>
             </div>
             
@@ -435,7 +495,11 @@
             beach: "#f093fb",
             spiritual: "#4facfe",
             nature: "#43e97b",
-            restaurant: "#ff6b6b",
+            food: "#ff6b6b",
+            breakfast: "#ff6b6b",
+            lunch: "#ff6b6b",
+            dinner: "#ff6b6b",
+            cafe: "#ff6b6b",
             hotel: "#ffd93d"
         };
 
@@ -454,7 +518,7 @@
         const createIcon = (color) => {
             return L.divIcon({
                 className: 'custom-marker',
-                html: `<div style="background-color: ${color}; width: 25px; height: 25px; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.3);"></div>`,
+                html: `<div style="background-color: ${color}; width: 20px; height: 20px; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.3);"></div>`,
                 iconSize: [25, 25],
                 iconAnchor: [12, 12]
             });
@@ -472,6 +536,7 @@
                 icon: createIcon(dest.color)
             }).addTo(map);
             
+            // Add hyperlink if link property exists
             const popupContent = `
                 <div class="popup-content">
                     <h3>${dest.link ? `<a href="${dest.link}" target="_blank" style="color: #667eea; text-decoration: none;">${dest.name} 🔗</a>` : dest.name}</h3>
@@ -487,9 +552,18 @@
         function renderDestinations() {
             const listContainer = document.getElementById('destinationsList');
             const filtered = destinations.filter(dest => {
-                const matchesCategory = activeCategory === 'all' || dest.category === activeCategory;
+                let matchesCategory = false;
+                
+                if (activeCategory === 'all') {
+                    matchesCategory = true;
+                } else if (activeCategory === 'food') {
+                    matchesCategory = ['breakfast', 'lunch', 'dinner', 'cafe'].includes(dest.category);
+                } else {
+                    matchesCategory = dest.category === activeCategory;
+                }
+                
                 const matchesSearch = dest.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                                     dest.description.toLowerCase().includes(searchQuery.toLowerCase());
+                                    dest.description.toLowerCase().includes(searchQuery.toLowerCase());
                 return matchesCategory && matchesSearch;
             });
             
@@ -521,25 +595,90 @@
                 });
             });
         }
-        
-        // Filter button handlers
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                activeCategory = this.getAttribute('data-category');
 
+        //const foodSubFilters = document.getElementById('foodSubFilters');
+
+        document.querySelectorAll('.filter-btn, .subfilter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const category = this.getAttribute('data-category');
+                const isParent = this.getAttribute('data-parent');
+                const parentCategory = this.getAttribute('data-parent-category');
+                const subfilterId = this.getAttribute('data-subfilterId');
+                
+                // If clicking a parent filter (Food)
+                if (isParent) {
+                    
+                    // Toggle active state
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    
+                    // Remove active from all sub-filters
+                    document.querySelectorAll('.subfilter-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Hide ALL sub-filters first
+                    document.querySelectorAll('.sub-filters').forEach(sf => sf.style.display = 'none');
+                    
+                    // Show only the relevant sub-filter
+                    if (subfilterId) {
+                        const subfilterContainer = document.getElementById(subfilterId);
+                        if (subfilterContainer) {
+                            subfilterContainer.style.display = 'block';
+                        }
+                    }
+
+                    // Show all items in this parent category
+                    activeCategory = category;
+            
+                } 
+
+                // If clicking a sub-filter
+                else if (parentCategory) {
+                    // Remove active from all sub-filters
+                    document.querySelectorAll('.subfilter-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    activeCategory = category;
+                }
+                
+                // If clicking any other main filter
+                else {
+                    // Remove active from all buttons
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Hide ALL sub-filters
+                    document.querySelectorAll('.sub-filters').forEach(sf => sf.style.display = 'none');
+                    
+                    activeCategory = category;
+                }
+                
                 // Show/hide markers based on category
                 destinations.forEach((dest, index) => {
-                    if (activeCategory === 'all' || dest.category === activeCategory) {
+                    let shouldShow = false;
+                    
+                    if (activeCategory === 'all') {
+                        shouldShow = true;
+                    } else if (activeCategory === 'food') {
+                        // Show all food subcategories
+                        shouldShow = ['breakfast', 'lunch', 'dinner', 'cafe'].includes(dest.category);
+                    } else if (activeCategory === 'food') {
+                        // Show all attraction subcategories
+                        shouldShow = ['heritage', 'spiritual', 'nature', 'adventure'].includes(dest.category);
+                    } else if (activeCategory === 'food') {
+                        // Show all transport subcategories
+                        shouldShow = ['scooter', 'cab', 'bus'].includes(dest.category);
+                    } else {
+                        shouldShow = dest.category === activeCategory;
+                    }
+                    
+                    if (shouldShow) {
                         markers[index].addTo(map);
                     } else {
                         map.removeLayer(markers[index]);
                     }
                 });
-        
                 renderDestinations();
-            });
+             });
         });
         
         // Search handler
@@ -555,7 +694,13 @@
         
         // Toggle sidebar
         toggleBtn.addEventListener('click', () => {
-            sidebar.classList.toggle('open');
+            if (window.innerWidth > 768) {
+                // Desktop: use collapsed class
+                sidebar.classList.toggle('collapsed');
+            } else {
+                // Mobile: use open class
+                sidebar.classList.toggle('open');
+            }
         });
 
         // Auto-close sidebar on mobile when selecting destination
@@ -580,7 +725,6 @@
 
         // Initial render
         renderDestinations();
-        
         
     </script>
 </body>
