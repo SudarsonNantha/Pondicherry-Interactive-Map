@@ -470,7 +470,7 @@
         </div>
     </div>
 
-    <script src="destinations.js"></script>
+    <script src="assets/database/places.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
     <script>
         // Approximate bounds around Pondicherry with padding
@@ -491,21 +491,40 @@
 
         // Category color mapping
         const categoryColors = {
-            heritage: "#667eea",
+            // Main categories
             beach: "#f093fb",
-            spiritual: "#4facfe",
-            nature: "#43e97b",
+            nightlife: "#9d4edd",
+            tourist: "#06ffa5",
+            
+            // Food category and subcategories
             food: "#ff6b6b",
             breakfast: "#ff6b6b",
             lunch: "#ff6b6b",
             dinner: "#ff6b6b",
             cafe: "#ff6b6b",
-            hotel: "#ffd93d"
+            
+            // Attraction category and subcategories
+            attraction: "#667eea",
+            heritage: "#667eea",
+            spiritual: "#4facfe",
+            nature: "#43e97b",
+            adventure: "#ffa500",
+            
+            // Transport category and subcategories
+            transport: "#ffd93d",
+            scooty: "#ffd93d",
+            cab: "#ffd93d",
+            bus: "#ffd93d"
         };
 
         // Assign colors to destinations automatically
         destinations.forEach(dest => {
-            dest.color = categoryColors[dest.category] || "#999999"; // Default gray if category not found
+            // Use subCategory color if it exists, otherwise use category color
+            if (dest.subCategory) {
+                dest.color = categoryColors[dest.subCategory] || categoryColors[dest.category] || "#999999";
+            } else {
+                dest.color = categoryColors[dest.category] || "#999999";
+            }
         });
 
         // Add OpenStreetMap tiles
@@ -556,10 +575,10 @@
                 
                 if (activeCategory === 'all') {
                     matchesCategory = true;
-                } else if (activeCategory === 'food') {
-                    matchesCategory = ['breakfast', 'lunch', 'dinner', 'cafe'].includes(dest.category);
                 } else {
-                    matchesCategory = dest.category === activeCategory;
+                    // Match either category or subCategory
+                    matchesCategory = (dest.category === activeCategory) || 
+                                    (dest.subCategory === activeCategory);
                 }
                 
                 const matchesSearch = dest.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -596,8 +615,6 @@
             });
         }
 
-        //const foodSubFilters = document.getElementById('foodSubFilters');
-
         document.querySelectorAll('.filter-btn, .subfilter-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 const category = this.getAttribute('data-category');
@@ -605,12 +622,10 @@
                 const parentCategory = this.getAttribute('data-parent-category');
                 const subfilterId = this.getAttribute('data-subfilterId');
                 
-                // If clicking a parent filter (Food)
+                // If clicking a parent filter (Food, Attraction, Transport)
                 if (isParent) {
-                    
-                    // Toggle active state
+                    // Remove active from ALL filter buttons
                     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                    
                     // Remove active from all sub-filters
                     document.querySelectorAll('.subfilter-btn').forEach(b => b.classList.remove('active'));
                     this.classList.add('active');
@@ -626,11 +641,8 @@
                         }
                     }
 
-                    // Show all items in this parent category
                     activeCategory = category;
-            
                 } 
-
                 // If clicking a sub-filter
                 else if (parentCategory) {
                     // Remove active from all sub-filters
@@ -639,7 +651,6 @@
                     
                     activeCategory = category;
                 }
-                
                 // If clicking any other main filter
                 else {
                     // Remove active from all buttons
@@ -652,23 +663,16 @@
                     activeCategory = category;
                 }
                 
-                // Show/hide markers based on category
+                // SIMPLIFIED: Show/hide markers based on category
                 destinations.forEach((dest, index) => {
                     let shouldShow = false;
                     
                     if (activeCategory === 'all') {
                         shouldShow = true;
-                    } else if (activeCategory === 'food') {
-                        // Show all food subcategories
-                        shouldShow = ['breakfast', 'lunch', 'dinner', 'cafe'].includes(dest.category);
-                    } else if (activeCategory === 'food') {
-                        // Show all attraction subcategories
-                        shouldShow = ['heritage', 'spiritual', 'nature', 'adventure'].includes(dest.category);
-                    } else if (activeCategory === 'food') {
-                        // Show all transport subcategories
-                        shouldShow = ['scooter', 'cab', 'bus'].includes(dest.category);
                     } else {
-                        shouldShow = dest.category === activeCategory;
+                        // Match either category or subCategory
+                        shouldShow = (dest.category === activeCategory) || 
+                                    (dest.subCategory === activeCategory);
                     }
                     
                     if (shouldShow) {
@@ -677,8 +681,9 @@
                         map.removeLayer(markers[index]);
                     }
                 });
+                
                 renderDestinations();
-             });
+            });
         });
         
         // Search handler
