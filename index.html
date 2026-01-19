@@ -188,13 +188,13 @@
             border-color: var(--accent1-color);
         }
         
-        .destinations-list {
+        .locations-list {
             flex: 1;
             overflow-y: auto;
             padding: 10px;
         }
         
-        .destination-item {
+        .location-item {
             background: var(--primary-color);
             border: 1px solid var(--border-color);
             border-radius: 8px;
@@ -204,12 +204,12 @@
             transition: all 0.3s;
         }
         
-        .destination-item:hover {
+        .location-item:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         
-        .destination-item h4 {
+        .location-item h4 {
             font-size: 15px;
             color: var(--header-color);
             margin-bottom: 5px;
@@ -217,7 +217,7 @@
             align-items: center;
         }
         
-        .destination-item .category-badge {
+        .location-item .category-badge {
             display: inline-block;
             width: 10px;
             height: 10px;
@@ -225,7 +225,7 @@
             margin-right: 8px;
         }
         
-        .destination-item p {
+        .location-item p {
             font-size: 12px;
             color: var(--font-color);
             line-height: 1.4;
@@ -409,14 +409,18 @@
                     <button class="filter-btn" data-category="beach">Beaches</button>
                     <button class="filter-btn" data-category="attraction" data-parent="true" data-subfilterId="attractionSubFilters">Attractions</button>
                     <button class="filter-btn" data-category="transport" data-parent="true" data-subfilterId="transportSubFilters">Transport</button>
-                    <button class="filter-btn" data-category="tourist">Tourist</button>
+                    <button class="filter-btn" data-category="hotel">Hotels</button>
                 </div>
                 <div class="sub-filters" id="foodSubFilters" style="display: none; margin-top: 10px;">
                     <div class="filter-buttons">
-                        <button class="subfilter-btn" data-category="breakfast" data-parent-category="food">Breakfast</button>
-                        <button class="subfilter-btn" data-category="lunch" data-parent-category="food">Lunch</button>
-                        <button class="subfilter-btn" data-category="dinner" data-parent-category="food">Dinner</button>
+                        <button class="subfilter-btn" data-category="south-indian" data-parent-category="food">South Indian</button>
+                        <button class="subfilter-btn" data-category="north-indian" data-parent-category="food">North Indian</button>
+                        <button class="subfilter-btn" data-category="multicuisine" data-parent-category="food">Multi-cuisine</button>
+                        <button class="subfilter-btn" data-category="continental" data-parent-category="food">Continental</button>
+                        <button class="subfilter-btn" data-category="asian" data-parent-category="food">Asian</button>
+                        <button class="subfilter-btn" data-category="fine" data-parent-category="food">Fine Dining</button>
                         <button class="subfilter-btn" data-category="cafe" data-parent-category="food">Café</button>
+                        <button class="subfilter-btn" data-category="dessert" data-parent-category="food">Dessert</button>
                     </div>
                 </div>
                 <div class="sub-filters" id="attractionSubFilters" style="display: none; margin-top: 10px;">
@@ -436,7 +440,7 @@
                 </div>
             </div>
             
-            <div class="destinations-list" id="destinationsList"></div>
+            <div class="locations-list" id="locationsList"></div>
         </div>
         
         <div id="map"></div>
@@ -445,27 +449,27 @@
     <div class="legend">
         <h4>Categories</h4>
         <div class="legend-item">
-            <div class="legend-icon" style="background: #667eea;"></div>
-            <span>Heritage</span>
+            <div class="legend-icon" style="background: #ff6b6b;"></div>
+            <span>Food</span>
         </div>
         <div class="legend-item">
-            <div class="legend-icon" style="background: #f093fb;"></div>
-            <span>Beach</span>
+            <div class="legend-icon" style="background: #9d4edd;"></div>
+            <span>Nightlife</span>
         </div>
         <div class="legend-item">
             <div class="legend-icon" style="background: #4facfe;"></div>
-            <span>Spiritual</span>
+            <span>Beach</span>
         </div>
         <div class="legend-item">
-            <div class="legend-icon" style="background: #43e97b;"></div>
-            <span>Nature</span>
-        </div>
-        <div class="legend-item">
-            <div class="legend-icon" style="background: #ff6b6b;"></div>
-            <span>Restaurant</span>
+            <div class="legend-icon" style="background: #007627;"></div>
+            <span>Attraction</span>
         </div>
         <div class="legend-item">
             <div class="legend-icon" style="background: #ffd93d;"></div>
+            <span>Transport</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-icon" style="background: #000000;"></div>
             <span>Hotel</span>
         </div>
     </div>
@@ -473,59 +477,53 @@
     <script src="assets/database/places.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
     <script>
+
+        // Category color mapping
+        const categoryColors = {
+            beach: "#4facfe",
+            nightlife: "#9d4edd",
+            tourist: "#06ffa5",
+            food: "#ff6b6b", 
+            attraction: "#007627",
+            transport: "#ffd93d",
+            hotel: "#000000"
+        };
+
+        // Assign colors to locations automatically
+        locations.forEach(loc => {
+            // Use subCategory color if it exists, otherwise use category color
+            if (loc.subCategory) {
+                loc.color = categoryColors[loc.subCategory] || categoryColors[loc.category] || "#999999";
+            } else {
+                loc.color = categoryColors[loc.category] || "#999999";
+            }
+        });
+
+
+        /*      INITIALIZE MAP      */
+        // Calculate map center from locations
+        const lats = locations.map(loc => loc.lat);
+        const lngs = locations.map(loc => loc.lng);
+        const centreLat = (Math.min(...lats) + Math.max(...lats)) / 2;
+        const centreLng = (Math.min(...lngs) + Math.max(...lngs)) / 2;
+        //const centreLat = 11.936878344753454;
+        //const centreLng = 79.82499503746473;
+        const boundsPad = 0.1;
+
         // Approximate bounds around Pondicherry with padding
         const pondicherryBounds = L.latLngBounds(
-            [11.85, 79.70], // Southwest corner
-            [12.05, 79.95]  // Northeast corner
+            [centreLat-boundsPad, centreLng-boundsPad], // Southwest corner
+            [centreLat+boundsPad, centreLng+boundsPad]  // Northeast corner
         );
 
         // Initialize map
         const map = L.map('map', {
             maxBounds: pondicherryBounds,
             maxBoundsViscosity: 0.6 // Smooth resistance instead of hard stop
-        }).setView([11.9416, 79.8083], 13);
-
+        }).setView([centreLat, centreLng], 14);
         
         // Set poistion of map zoom control
         map.zoomControl.setPosition('topright');
-
-        // Category color mapping
-        const categoryColors = {
-            // Main categories
-            beach: "#f093fb",
-            nightlife: "#9d4edd",
-            tourist: "#06ffa5",
-            
-            // Food category and subcategories
-            food: "#ff6b6b",
-            breakfast: "#ff6b6b",
-            lunch: "#ff6b6b",
-            dinner: "#ff6b6b",
-            cafe: "#ff6b6b",
-            
-            // Attraction category and subcategories
-            attraction: "#667eea",
-            heritage: "#667eea",
-            spiritual: "#4facfe",
-            nature: "#43e97b",
-            adventure: "#ffa500",
-            
-            // Transport category and subcategories
-            transport: "#ffd93d",
-            scooty: "#ffd93d",
-            cab: "#ffd93d",
-            bus: "#ffd93d"
-        };
-
-        // Assign colors to destinations automatically
-        destinations.forEach(dest => {
-            // Use subCategory color if it exists, otherwise use category color
-            if (dest.subCategory) {
-                dest.color = categoryColors[dest.subCategory] || categoryColors[dest.category] || "#999999";
-            } else {
-                dest.color = categoryColors[dest.category] || "#999999";
-            }
-        });
 
         // Add OpenStreetMap tiles
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -550,16 +548,16 @@
         let searchQuery = '';
         
         // Add markers to map
-        destinations.forEach((dest, index) => {
-            const marker = L.marker([dest.lat, dest.lng], {
-                icon: createIcon(dest.color)
+        locations.forEach((loc, index) => {
+            const marker = L.marker([loc.lat, loc.lng], {
+                icon: createIcon(loc.color)
             }).addTo(map);
             
             // Add hyperlink if link property exists
             const popupContent = `
                 <div class="popup-content">
-                    <h3>${dest.link ? `<a href="${dest.link}" target="_blank" style="color: #667eea; text-decoration: none;">${dest.name} 🔗</a>` : dest.name}</h3>
-                    <p>${dest.description}</p>
+                    <h3>${loc.link ? `<a href="${loc.link}" target="_blank" style="color: #667eea; text-decoration: none;">${loc.name} 🔗</a>` : loc.name}</h3>
+                    <p>${loc.description}</p>
                 </div>
             `;
             
@@ -567,49 +565,49 @@
             markers[index] = marker;
         });
         
-        // Render destinations list
-        function renderDestinations() {
-            const listContainer = document.getElementById('destinationsList');
-            const filtered = destinations.filter(dest => {
+        // Render locations list
+        function renderLocations() {
+            const listContainer = document.getElementById('locationsList');
+            const filtered = locations.filter(loc => {
                 let matchesCategory = false;
                 
                 if (activeCategory === 'all') {
                     matchesCategory = true;
                 } else {
                     // Match either category or subCategory
-                    matchesCategory = (dest.category === activeCategory) || 
-                                    (dest.subCategory === activeCategory);
+                    matchesCategory = (loc.category === activeCategory) || 
+                                    (loc.subCategory === activeCategory);
                 }
                 
-                const matchesSearch = dest.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                                    dest.description.toLowerCase().includes(searchQuery.toLowerCase());
+                const matchesSearch = loc.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                                    loc.description.toLowerCase().includes(searchQuery.toLowerCase());
                 return matchesCategory && matchesSearch;
             });
             
             if (filtered.length === 0) {
-                listContainer.innerHTML = '<div class="no-results">No destinations found</div>';
+                listContainer.innerHTML = '<div class="no-results">No locations found</div>';
                 return;
             }
             
-            listContainer.innerHTML = filtered.map((dest, index) => {
-                const originalIndex = destinations.indexOf(dest);
+            listContainer.innerHTML = filtered.map((loc, index) => {
+                const originalIndex = locations.indexOf(loc);
                 return `
-                    <div class="destination-item" data-index="${originalIndex}">
+                    <div class="location-item" data-index="${originalIndex}">
                         <h4>
-                            <span class="category-badge" style="background: ${dest.color}"></span>
-                            ${dest.name}
+                            <span class="category-badge" style="background: ${loc.color}"></span>
+                            ${loc.name}
                         </h4>
-                        <p>${dest.description}</p>
+                        <p>${loc.description}</p>
                     </div>
                 `;
             }).join('');
             
-            // Add click listeners to destination items
-            document.querySelectorAll('.destination-item').forEach(item => {
+            // Add click listeners to location items
+            document.querySelectorAll('.location-item').forEach(item => {
                 item.addEventListener('click', function() {
                     const index = this.getAttribute('data-index');
-                    const dest = destinations[index];
-                    map.setView([dest.lat, dest.lng], 16.2);
+                    const loc = locations[index];
+                    map.setView([loc.lat, loc.lng], 16.2);
                     markers[index].openPopup();
                 });
             });
@@ -663,16 +661,16 @@
                     activeCategory = category;
                 }
                 
-                // SIMPLIFIED: Show/hide markers based on category
-                destinations.forEach((dest, index) => {
+                // Show/hide markers based on category
+                locations.forEach((loc, index) => {
                     let shouldShow = false;
                     
                     if (activeCategory === 'all') {
                         shouldShow = true;
                     } else {
                         // Match either category or subCategory
-                        shouldShow = (dest.category === activeCategory) || 
-                                    (dest.subCategory === activeCategory);
+                        shouldShow = (loc.category === activeCategory) || 
+                                    (loc.subCategory === activeCategory);
                     }
                     
                     if (shouldShow) {
@@ -682,14 +680,14 @@
                     }
                 });
                 
-                renderDestinations();
+                renderLocations();
             });
         });
         
         // Search handler
         document.getElementById('searchInput').addEventListener('input', function(e) {
             searchQuery = e.target.value;
-            renderDestinations();
+            renderLocations();
         });
         
         // Toggle sidebar
@@ -708,10 +706,10 @@
             }
         });
 
-        // Auto-close sidebar on mobile when selecting destination
+        // Auto-close sidebar on mobile when selecting location
         document.addEventListener('click', (e) => {
             if (
-                e.target.closest('.destination-item') &&
+                e.target.closest('.location-item') &&
                 window.innerWidth <= 768
             ) {
                 sidebar.classList.remove('open');
@@ -729,7 +727,7 @@
 
 
         // Initial render
-        renderDestinations();
+        renderLocations();
         
     </script>
 </body>
