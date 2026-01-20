@@ -1,56 +1,57 @@
 name,coordinates,description,category,subCategory,link
 Promenade Beach,"11.931431413763924, 79.83606797917007","A 1.5 km long stretch along the Bay of Bengal, perfect for evening strolls with French colonial architecture.",beach,,https://maps.app.goo.gl/fCnoR5SFwYmQxWnZ9
-Pondy Marina Beach,"11.909228948551718, 79.83007227791347",Rip off of a beach in Chennai,beach,,https://maps.app.goo.gl/AfhHVyo7eVnwEEfC9
+Pondy Marina Beach,"11.909065848188925, 79.82966438513945",Rip off of a beach in Chennai,beach,,https://maps.app.goo.gl/AfhHVyo7eVnwEEfC9
 Paradise Beach,"11.872367048817132, 79.82007396636845","A pristine beach accessible by boat, known for its golden sands and clear waters.",beach,,https://maps.app.goo.gl/rufWef4qwV4YPnQt5
 Serenity Beach,"11.969236686365763, 79.84459938985853",Popular surfing destination with laid-back beach shacks and surf schools.,beach,,https://maps.app.goo.gl/F6w3gQpVLMb5dMwg7
-Sri Aurobindo Ashram,"11.936959112352222, 79.83485528715974","Founded in 1926, this spiritual community attracts seekers from around the world.",attraction,spiritual,https://maps.app.goo.gl/B3kJEqd767dVCGQg9
-Sacred Heart Basilica,"11.926283730514424, 79.8275188681188","Gothic-style church built in the 1900s, featuring beautiful stained glass panels.",attraction,spiritual,https://maps.app.goo.gl/7Qu2hbHky311xjHT7
-Botanical Garden,"11.930528700891681, 79.82276392024244","22-acre garden dating back to 1826, featuring rare plant species and musical fountains.",attraction,nature,https://maps.app.goo.gl/L8qdcxWwVMqVniSX9
+Sri Aurobindo Ashram,"11.936724313313498, 79.83397700081899","Founded in 1926, this spiritual community attracts seekers from around the world.",attraction,spiritual,https://maps.app.goo.gl/B3kJEqd767dVCGQg9
+Sacred Heart Basilica,"11.926049828469404, 79.82696682838316","Gothic-style church built in the 1900s, featuring beautiful stained glass panels.",attraction,spiritual,https://maps.app.goo.gl/7Qu2hbHky311xjHT7
+Botanical Garden,"11.930208013085682, 79.8224020221313","22-acre garden dating back to 1826, featuring rare plant species and musical fountains.",attraction,nature,https://maps.app.goo.gl/L8qdcxWwVMqVniSX9
 Chunnambar Boat House,"11.88395947266875, 79.80124539695404",Backwater paradise offering boating experiences through mangrove forests.,attraction,nature,https://maps.app.goo.gl/d7mFAzCBR42An54Q7
-Manakula Vinayagar Temple,"11.936059003824385, 79.83445603133771","300-year-old temple dedicated to Lord Ganesha, known for its elephant Lakshmi.",attraction,spiritual,https://maps.app.goo.gl/yh56iKHtUPPopzdR8
-Hotel Madurai Veedu,"11.929300736948072, 79.83099500065575",,food,south-indian,https://maps.app.goo.gl/qXtdYVd9iYTHbK5U9
-Nalla Thambi Mess,"11.938338380684865, 79.83114197737152",,food,south-indian,https://maps.app.goo.gl/TZWGdVMYNrnYxwnt5
-Hotel Sri Kamatchi,"11.930099273024888, 79.81158911261103",,food,south-indian,https://maps.app.goo.gl/JUyXvhHU6nKrqBV77
-"Hotel Sri Kamatchi, White Town branch","11.929748020586782, 79.83770754858047",,food,south-indian,https://maps.app.goo.gl/QLqDrpFAHKsFXhLx7
-Ende Nadu,"11.940415734063683, 79.83482802155046",,food,south-indian,https://maps.app.goo.gl/6XiaeEyxQaME6LjR7
-Kamireddy Foods,"11.942762156844944, 79.80371160900435",,food,south-indian,https://maps.app.goo.gl/dX3g1J288NqmiVyVA
-Kushi Hyderabadi Biriyani,"11.944196809053619, 79.80384000986906",,food,south-indian,https://maps.app.goo.gl/LRKj3xna3h7Uop519
-Kongu Kitchen,"11.930107365208997, 79.82617637367049",,food,south-indian,https://maps.app.goo.gl/XWHuMXSYZZk73LXg7
-Sri Murugan Cafe,"11.937665169374066, 79.82769305038626",Vegetarian restaurant,food,south-indian,https://maps.app.goo.gl/RFtEXWrS5U5aDEqU9
-Surguru Restaurant,"11.934673707828539, 79.80826600805784",Vegetarian restaurant,food,south-indian,https://maps.app.goo.gl/easizLCWiK52CKCcA
-Punjabi Dhaba,"11.939838434510971, 79.83275507922204",,food,north-indian,https://maps.app.goo.gl/oGtLZowCycMTC4fH7
-Dilliwaala6,"11.936756124298093, 79.83540715832731",,food,north-indian,https://maps.app.goo.gl/9BuwvkD1gmgMUFws6
-Bro's plan B,"12.000236842683277, 79.80136959641571",,food,north-indian,https://maps.app.goo.gl/RSxCN2apRE5ixRdQ8
-Just Parathas,"11.938972997540521, 79.83350663315323",,food,north-indian,https://maps.app.goo.gl/CGcQid1gu583eMbn7
-Kokonut Lagoon,"11.944798947984868, 79.80198720990835",,food,multicuisine,https://maps.app.goo.gl/7RgLigie48oo2EHfA
-Copper Kitchen,"11.933267451667582, 79.80834088107255",,food,multicuisine,https://maps.app.goo.gl/DtR2NfXzkD6WbNQE8
-Prawn and Crab,"11.951981402659154, 79.81742517367047",,food,multicuisine,https://maps.app.goo.gl/MfyNiUgHcSXJULPX7
-Terrassen Cafe,"11.987977186862354, 79.836079975521","Family-friendly vegan restaurant and vegetarian cafe serving a diverse menu inspired by Mediterranean, North Indian, Italian, and American cuisines.",food,multicuisine,https://maps.app.goo.gl/HUdXZcMeNVjtCSnX7
-Conscious Cafe,"11.992734618941885, 79.81796418901364",,food,cafe,https://maps.app.goo.gl/PLTHXjyzqk9pooC1A
-Hope Cafe,"11.930737229891328, 79.83376229880524",,food,cafe,https://maps.app.goo.gl/zPUgdmLjXC8w7G9a9
-Cafe des Arts,"11.930698141590135, 79.83172647552101",This 19th-century building with vintage decor & garden seating offers French cafe fare & coffee.,food,cafe,https://maps.app.goo.gl/ACcLE1Adfx8ZhZ9V6
-Hot Breads,"11.93547771478086, 79.83303181774058",,food,cafe,https://maps.app.goo.gl/jLkv2Yiw5r85sjsEA
-Bread & Chocolate,"11.936584410769527, 79.83554999060065",,food,cafe,https://maps.app.goo.gl/Vrnok1HB4QsxSHtV8
-Cafe 73,"11.991008910553324, 79.8303409466852",Café known for its burgers and dishes named after motorcycles.,food,continental,https://maps.app.goo.gl/FFga9VtZVXHquYhaA
-Daddy Amma Momo Shop,"11.865184496066751, 79.79376283134205",,food,asian,https://maps.app.goo.gl/K6y9K9CLuQxokugS6
-Gelato Artigianale Italiano,"11.92627183052412, 79.83452511966038",Italian-style gelateria serving handcrafted gelato in classic and seasonal flavors.,food,dessert,https://maps.app.goo.gl/or1Z3rFV1RdW9wEQ6
-Tipsy cream,"11.929934447759063, 79.82782438103305",Dessert spot known for creative ice creams and alcohol-infused frozen treats.,food,dessert,https://maps.app.goo.gl/2BaWHcbhVDuJxGUu5
-Zuka,"11.930010414609383, 79.83056344457076",,food,dessert,https://maps.app.goo.gl/P89xobMN8b776Thw6
-Villa Shanti Hotel Restaurant,"11.929923519111252, 79.83341397181997",Refined restaurant blending Indian and European flavors within a heritage hotel setting.,food,fine,https://maps.app.goo.gl/LeJVxD2KSthub8gw9
-Pavilion,"11.93408715420923, 79.8247794466852",Luxury hotel restaurant offering an upscale multi-cuisine dining experience with polished service.,food,fine,https://maps.app.goo.gl/AfveaGABdhUepUCH7
-Anthé Restaurant,"11.925423153811817, 79.8334691945652",Fine-dining venue focusing on modern Indian cuisine with curated menus and elegant presentation.,food,fine,https://maps.app.goo.gl/US7RJ9RrZt2BYsY76
-Mel Whisks,"11.935340913857802, 79.8315701847342","A very happening bar with lots of great food options, fun activities, and karaoke nights.",nightlife,,https://maps.app.goo.gl/3KgJfsUugyvJ5sMV6
-Catamaran Brewing Company,"11.940546412310256, 79.82779706569006","Pondicherry's craft brewery offering house-brewed beers, pub food, and a vibrant social setting.",nightlife,,https://maps.app.goo.gl/KmDgo1UKLJoy2ApaA
-Asian House Pub,"11.925331359292917, 79.83304597050845",,nightlife,,https://maps.app.goo.gl/AD4rXmXMfVd8gYPs8
-Bike & Barrel,"11.934168841953701, 79.82477249880523",,nightlife,,https://maps.app.goo.gl/rKLSExuRZTzwMnHZ7
-Unpack Hostel,"11.953907695152067, 79.83492720091793",,hotel,,https://maps.app.goo.gl/2KtwdhpccjgC3RSK8
-Happy Ride,"11.92690453068376, 79.82574425216475",,transport,scooty,https://maps.app.goo.gl/iWPeKH4k4cYs35rx6
-Star Two Wheeler,"11.927272543346088, 79.8281059762935",,transport,scooty,https://maps.app.goo.gl/dRPsyCNysshJAavp7
-Bala Two Wheeler,"11.927524476221834, 79.82807378978613",,transport,scooty,https://maps.app.goo.gl/9HvZi4LVoa17hK5v6
-V Ambal Two Wheeler,"11.936985358850311, 79.83162448100055",,transport,scooty,https://maps.app.goo.gl/rjngGgTJ8YnxAZsw7
-Vijay Arya Bike Rentals,"11.932870742908678, 79.81959876326786",,transport,scooty,https://maps.app.goo.gl/jbkxYHG2VikTkZ8RA
-Sai Two Wheeler Rent,"11.936738122118946, 79.8322574669689",,transport,scooty,https://maps.app.goo.gl/ErEbuRiFoTeGuVSz6
-Joy ride's,"11.936667940953015, 79.82349172706257",,transport,scooty,https://maps.app.goo.gl/f4dHkyL2kU4tGbBQ9
-M.M.K Bike Rent,"11.931593849751781, 79.81940063867212",,transport,scooty,https://maps.app.goo.gl/KRHobrDznZFQTapH8
-SSS Bike Rental Service,"11.93380112410532, 79.81830215021199",,transport,scooty,https://maps.app.goo.gl/aerinLEWHus9WUXeA
-Royal Brothers,"11.937285230146806, 79.83212210004473",,transport,scooty,https://maps.app.goo.gl/sEWUiPrJ2k16fB5o6
+Manakula Vinayagar Temple,"11.935771796277553, 79.83367289067938","300-year-old temple dedicated to Lord Ganesha, known for its elephant Lakshmi.",attraction,spiritual,https://maps.app.goo.gl/yh56iKHtUPPopzdR8
+Hotel Madurai Veedu,"11.929071337916048, 79.83067827915048",A top restaurant serving high-quality South Indian dishes in a family-friendly atmosphere.,food,south-indian,https://maps.app.goo.gl/qXtdYVd9iYTHbK5U9
+Nalla Thambi Mess,"11.938207877644198, 79.83065387307084","Nalla Thambi Mess, located in the heart of Puducherry, offers a delightful culinary experience steeped in traditional flavors and is renowned for its authentic South Indian dishes.",food,south-indian,https://maps.app.goo.gl/TZWGdVMYNrnYxwnt5
+Hotel Sri Kamatchi,"11.928134673071574, 79.80719979613585",Authentic Non-Veg Restaurant in Pondicherry | Kamatchi Special Meals Some meals don't just fill your stomach - they take you back to tradition.,food,south-indian,https://maps.app.goo.gl/JUyXvhHU6nKrqBV77
+"Hotel Sri Kamatchi, White Town branch","11.9279523097894, 79.83234877860374",White Town Branch of the famous Hotel Sri Kamatchi.,food,south-indian,https://maps.app.goo.gl/QLqDrpFAHKsFXhLx7
+Ende Nadu,"11.940206863674314, 79.83424617553509",Authentic Kerala cuisine right here in Pondicherry.,food,south-indian,https://maps.app.goo.gl/6XiaeEyxQaME6LjR7
+Kamireddy Foods,"11.941986655721433, 79.80158648297805","Affordable, tasty, and huge variety of non-vegetarian dishes.",food,south-indian,https://maps.app.goo.gl/dX3g1J288NqmiVyVA
+Kushi Hyderabadi Biriyani,"11.943954592808938, 79.80328582564488",The best Hyderabadi Dum Biriyani in the city.,food,south-indian,https://maps.app.goo.gl/LRKj3xna3h7Uop519
+Kongu Kitchen,"11.929902015641348, 79.82569223495085","Offers Kongunadu Cuisine from 50 towns in the North Western part of Tamil Nadu like Coimbatore and neighboring areas like Salem, Erode, Tirupur and Dindugul. ",food,south-indian,https://maps.app.goo.gl/XWHuMXSYZZk73LXg7
+Sri Murugan Cafe,"11.93738437967918, 79.82695007850299",Small outlet serving only the best vegetarian South-Indian food.,food,south-indian,https://maps.app.goo.gl/RFtEXWrS5U5aDEqU9
+Surguru Restaurant,"11.933894084795876, 79.83109458005201","One of the all time classics, serving a huge range of South-Indian vegetarian food.",food,south-indian,https://maps.app.goo.gl/txzFFDPZbPbmiKe87
+Punjabi Dhaba,"11.939628917826722, 79.83214904924948",Pondicherry's little slice of Amritsar.,food,north-indian,https://maps.app.goo.gl/oGtLZowCycMTC4fH7
+Dilliwaala6,"11.936499585174754, 79.83506914287781",A colourful vegetarian restaurant with a wide array of North-Indian dishes.,food,north-indian,https://maps.app.goo.gl/9BuwvkD1gmgMUFws6
+Bro's plan B,"11.999986016816496, 79.80076625666787","Delicious, affordable North-Indian food in Auroville.",food,north-indian,https://maps.app.goo.gl/RSxCN2apRE5ixRdQ8
+Just Parathas,"11.938677550174274, 79.83319575138951","As the name suggests, come here for their delectable parathas.",food,north-indian,https://maps.app.goo.gl/CGcQid1gu583eMbn7
+Kokonut Lagoon,"11.944511602370412, 79.80122400614303","In their own words, ""Mallufied ambience with delicious Kerala cuisine in Pondicherry""",food,multicuisine,https://maps.app.goo.gl/7RgLigie48oo2EHfA
+Copper Kitchen,"11.933089586462259, 79.80765928924365",Chennai's favourite multicuisine restaurant chain.,food,multicuisine,https://maps.app.goo.gl/DtR2NfXzkD6WbNQE8
+Prawn and Crab,"11.951745236913842, 79.81690482512971","Indulge in the freshest seafood delights at Prawn and Crab - The House of Seafood, Pondicherry's premier seafood restaurant!",food,multicuisine,https://maps.app.goo.gl/MfyNiUgHcSXJULPX7
+Terrassen Cafe,"11.987794838733246, 79.83563338773247","Family-friendly vegan restaurant and vegetarian cafe serving a diverse menu inspired by Mediterranean, North Indian, Italian, and American cuisines.",food,multicuisine,https://maps.app.goo.gl/HUdXZcMeNVjtCSnX7
+Conscious Cafe,"11.992552132566875, 79.81751969743776",Experience artisanal vegetarian & vegan food and beverages made with conscious ingredients at Conscious Cafe Auroville.,food,cafe,https://maps.app.goo.gl/PLTHXjyzqk9pooC1A
+Hope Cafe,"11.930534201889571, 79.83330264277521",Get tiny bites and beverages in this artistic café.,food,cafe,https://maps.app.goo.gl/zPUgdmLjXC8w7G9a9
+Cafe des Arts,"11.930485393801579, 79.8312667817077",This 19th-century building with vintage decor & garden seating offers French cafe fare & coffee.,food,cafe,https://maps.app.goo.gl/ACcLE1Adfx8ZhZ9V6
+Hot Breads,"11.934993050307959, 79.83241635537009","Try it for a variety of breads, pastries, and cookies. Very popular amongst the locals.",food,cafe,https://maps.app.goo.gl/jLkv2Yiw5r85sjsEA
+Bread & Chocolate,"11.936422537073383, 79.83509271643936",Lively rooftop cafe that servers French pastries.,food,cafe,https://maps.app.goo.gl/Vrnok1HB4QsxSHtV8
+Cafe 73,"11.990773101774653, 79.82988908259196",Café known for its burgers and dishes named after motorcycles.,food,continental,https://maps.app.goo.gl/FFga9VtZVXHquYhaA
+Daddy Amma Momo Shop,"11.865066262731863, 79.79338984991215",Rumoured to be the best momos in Pondy.,food,asian,https://maps.app.goo.gl/K6y9K9CLuQxokugS6
+Gelato Artigianale Italiano,"11.926046177114134, 79.83417789715229",Italian-style gelateria serving handcrafted gelato in classic and seasonal flavors.,food,dessert,https://maps.app.goo.gl/or1Z3rFV1RdW9wEQ6
+Tipsy cream,"11.929779053644927, 79.8273100887247",Dessert spot known for creative ice creams and alcohol-infused frozen treats.,food,dessert,https://maps.app.goo.gl/2BaWHcbhVDuJxGUu5
+Zuka,"11.929849063585785, 79.8302436116569","Snug desert shop offering decadent cakes, homemade chocolates, and other sweets.",food,dessert,https://maps.app.goo.gl/P89xobMN8b776Thw6
+Villa Shanti Hotel Restaurant,"11.929624668965248, 79.83310979657197",Refined restaurant blending Indian and European flavors within a heritage hotel setting.,food,fine,https://maps.app.goo.gl/LeJVxD2KSthub8gw9
+Pavilion,"11.933927715292997, 79.82433113870667",Luxury hotel restaurant offering an upscale multi-cuisine dining experience with polished service.,food,fine,https://maps.app.goo.gl/AfveaGABdhUepUCH7
+Anthé Restaurant,"11.925308008245187, 79.83291606872527",Fine-dining venue focusing on modern Indian cuisine with curated menus and elegant presentation.,food,fine,https://maps.app.goo.gl/US7RJ9RrZt2BYsY76
+Mel Whisks,"11.93508725059445, 79.83090459814862","A very happening bar with lots of great food options, fun activities, and karaoke nights.",nightlife,,https://maps.app.goo.gl/3KgJfsUugyvJ5sMV6
+Catamaran Brewing Company,"11.940332027633012, 79.82727457294368","Pondicherry's craft brewery offering house-brewed beers, pub food, and a vibrant social setting.",nightlife,,https://maps.app.goo.gl/KmDgo1UKLJoy2ApaA
+Asian House Pub,"11.925174066111287, 79.83337329947669",Offers a unique blend of Asian-inspired cuisine and a lively nightlife experience.,nightlife,,https://maps.app.goo.gl/AD4rXmXMfVd8gYPs8
+Bike & Barrel,"11.934004750840645, 79.8243482049046","Fashioned as an English pub in Puducherry, Bike & Barrel is the place to hit with your friends for a pint of beer!",nightlife,,https://maps.app.goo.gl/rKLSExuRZTzwMnHZ7
+Unpack Hostel,"11.952899443761543, 79.83359904812558",Affordable hostel catering to backpackers.,hotel,,https://maps.app.goo.gl/2KtwdhpccjgC3RSK8
+The Cradle,"11.933196414567936, 79.82528404582176","Couple friendly, uniquely designed, and thoughtfully decorated.",hotel,,https://maps.app.goo.gl/btMFUk9avLwNGtpi8
+Happy Ride,"11.926629964122228, 79.82543756465223",,transport,scooty,https://maps.app.goo.gl/iWPeKH4k4cYs35rx6
+Star Two Wheeler,"11.927111285221786, 79.82761535730413",,transport,scooty,https://maps.app.goo.gl/dRPsyCNysshJAavp7
+Bala Two Wheeler,"11.928917312239202, 79.83083715638317",,transport,scooty,https://maps.app.goo.gl/9HvZi4LVoa17hK5v6
+V Ambal Two Wheeler,"11.936846514550192, 79.83126619170726",,transport,scooty,https://maps.app.goo.gl/rjngGgTJ8YnxAZsw7
+Vijay Arya Bike Rentals,"11.932669282582616, 79.81881621927472",,transport,scooty,https://maps.app.goo.gl/jbkxYHG2VikTkZ8RA
+Sai Two Wheeler Rent,"11.936592843852509, 79.83139727158634",,transport,scooty,https://maps.app.goo.gl/ErEbuRiFoTeGuVSz6
+Joy ride's,"11.936507042286863, 79.8228472228518",,transport,scooty,https://maps.app.goo.gl/f4dHkyL2kU4tGbBQ9
+M.M.K Bike Rent,"11.931411148331138, 79.81902066283779",,transport,scooty,https://maps.app.goo.gl/KRHobrDznZFQTapH8
+SSS Bike Rental Service,"11.933393476757413, 79.81714496251028",,transport,scooty,https://maps.app.goo.gl/aerinLEWHus9WUXeA
+Royal Brothers,"11.937052924294779, 79.8315702821121",,transport,scooty,https://maps.app.goo.gl/sEWUiPrJ2k16fB5o6
