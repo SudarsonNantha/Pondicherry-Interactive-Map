@@ -11,7 +11,7 @@ const locations = [
         "name": "Pondy Marina Beach",
         "lat": 11.909065848188925,
         "lng": 79.82966438513945,
-        "description": "Rip off of a beach in Chennai",
+        "description": "Rip off of a beach in Chennai. Still worth visiting though.",
         "category": "beach",
         "link": "https://maps.app.goo.gl/AfhHVyo7eVnwEEfC9"
     },
@@ -89,7 +89,7 @@ const locations = [
         "name": "Nalla Thambi Mess",
         "lat": 11.938207877644198,
         "lng": 79.83065387307084,
-        "description": "Nalla Thambi Mess, located in the heart of Puducherry, offers a delightful culinary experience steeped in traditional flavors and is renowned for its authentic South Indian dishes.",
+        "description": "Offers a delightful culinary experience steeped in traditional flavors and is renowned for its authentic South Indian dishes.",
         "category": "food",
         "subCategory": "south-indian",
         "link": "https://maps.app.goo.gl/TZWGdVMYNrnYxwnt5"
@@ -98,7 +98,7 @@ const locations = [
         "name": "Hotel Sri Kamatchi",
         "lat": 11.928134673071574,
         "lng": 79.80719979613585,
-        "description": "Authentic Non-Veg Restaurant in Pondicherry | Kamatchi Special Meals Some meals don't just fill your stomach - they take you back to tradition.",
+        "description": "Authentic Non-Veg Restaurant | Kamatchi Special Meals Some meals don't just fill your stomach - they take you back to tradition.",
         "category": "food",
         "subCategory": "south-indian",
         "link": "https://maps.app.goo.gl/JUyXvhHU6nKrqBV77"
@@ -402,6 +402,15 @@ const locations = [
         "description": "Couple friendly, uniquely designed, and thoughtfully decorated.",
         "category": "hotel",
         "link": "https://maps.app.goo.gl/btMFUk9avLwNGtpi8"
+    },
+    {
+        "name": "Main Bus Station",
+        "lat": 11.93258757865037,
+        "lng": 79.81588828483888,
+        "description": "",
+        "category": "transport",
+        "subCategory": "bus",
+        "link": "https://maps.app.goo.gl/fQojwfE7yV3q2D3p8"
     },
     {
         "name": "Happy Ride",

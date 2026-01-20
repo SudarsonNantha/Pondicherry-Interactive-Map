@@ -1,6 +1,6 @@
 name,coordinates,description,category,subCategory,link
 Promenade Beach,"11.931431413763924, 79.83606797917007","A 1.5 km long stretch along the Bay of Bengal, perfect for evening strolls with French colonial architecture.",beach,,https://maps.app.goo.gl/fCnoR5SFwYmQxWnZ9
-Pondy Marina Beach,"11.909065848188925, 79.82966438513945",Rip off of a beach in Chennai,beach,,https://maps.app.goo.gl/AfhHVyo7eVnwEEfC9
+Pondy Marina Beach,"11.909065848188925, 79.82966438513945",Rip off of a beach in Chennai. Still worth visiting though.,beach,,https://maps.app.goo.gl/AfhHVyo7eVnwEEfC9
 Paradise Beach,"11.872367048817132, 79.82007396636845","A pristine beach accessible by boat, known for its golden sands and clear waters.",beach,,https://maps.app.goo.gl/rufWef4qwV4YPnQt5
 Serenity Beach,"11.969236686365763, 79.84459938985853",Popular surfing destination with laid-back beach shacks and surf schools.,beach,,https://maps.app.goo.gl/F6w3gQpVLMb5dMwg7
 Sri Aurobindo Ashram,"11.936724313313498, 79.83397700081899","Founded in 1926, this spiritual community attracts seekers from around the world.",attraction,spiritual,https://maps.app.goo.gl/B3kJEqd767dVCGQg9
@@ -9,8 +9,8 @@ Botanical Garden,"11.930208013085682, 79.8224020221313","22-acre garden dating b
 Chunnambar Boat House,"11.88395947266875, 79.80124539695404",Backwater paradise offering boating experiences through mangrove forests.,attraction,nature,https://maps.app.goo.gl/d7mFAzCBR42An54Q7
 Manakula Vinayagar Temple,"11.935771796277553, 79.83367289067938","300-year-old temple dedicated to Lord Ganesha, known for its elephant Lakshmi.",attraction,spiritual,https://maps.app.goo.gl/yh56iKHtUPPopzdR8
 Hotel Madurai Veedu,"11.929071337916048, 79.83067827915048",A top restaurant serving high-quality South Indian dishes in a family-friendly atmosphere.,food,south-indian,https://maps.app.goo.gl/qXtdYVd9iYTHbK5U9
-Nalla Thambi Mess,"11.938207877644198, 79.83065387307084","Nalla Thambi Mess, located in the heart of Puducherry, offers a delightful culinary experience steeped in traditional flavors and is renowned for its authentic South Indian dishes.",food,south-indian,https://maps.app.goo.gl/TZWGdVMYNrnYxwnt5
-Hotel Sri Kamatchi,"11.928134673071574, 79.80719979613585",Authentic Non-Veg Restaurant in Pondicherry | Kamatchi Special Meals Some meals don't just fill your stomach - they take you back to tradition.,food,south-indian,https://maps.app.goo.gl/JUyXvhHU6nKrqBV77
+Nalla Thambi Mess,"11.938207877644198, 79.83065387307084",Offers a delightful culinary experience steeped in traditional flavors and is renowned for its authentic South Indian dishes.,food,south-indian,https://maps.app.goo.gl/TZWGdVMYNrnYxwnt5
+Hotel Sri Kamatchi,"11.928134673071574, 79.80719979613585",Authentic Non-Veg Restaurant | Kamatchi Special Meals Some meals don't just fill your stomach - they take you back to tradition.,food,south-indian,https://maps.app.goo.gl/JUyXvhHU6nKrqBV77
 "Hotel Sri Kamatchi, White Town branch","11.9279523097894, 79.83234877860374",White Town Branch of the famous Hotel Sri Kamatchi.,food,south-indian,https://maps.app.goo.gl/QLqDrpFAHKsFXhLx7
 Ende Nadu,"11.940206863674314, 79.83424617553509",Authentic Kerala cuisine right here in Pondicherry.,food,south-indian,https://maps.app.goo.gl/6XiaeEyxQaME6LjR7
 Kamireddy Foods,"11.941986655721433, 79.80158648297805","Affordable, tasty, and huge variety of non-vegetarian dishes.",food,south-indian,https://maps.app.goo.gl/dX3g1J288NqmiVyVA
@@ -45,6 +45,7 @@ Asian House Pub,"11.925174066111287, 79.83337329947669",Offers a unique blend of
 Bike & Barrel,"11.934004750840645, 79.8243482049046","Fashioned as an English pub in Puducherry, Bike & Barrel is the place to hit with your friends for a pint of beer!",nightlife,,https://maps.app.goo.gl/rKLSExuRZTzwMnHZ7
 Unpack Hostel,"11.952899443761543, 79.83359904812558",Affordable hostel catering to backpackers.,hotel,,https://maps.app.goo.gl/2KtwdhpccjgC3RSK8
 The Cradle,"11.933196414567936, 79.82528404582176","Couple friendly, uniquely designed, and thoughtfully decorated.",hotel,,https://maps.app.goo.gl/btMFUk9avLwNGtpi8
+Main Bus Station,"11.93258757865037, 79.81588828483888",,transport,bus,https://maps.app.goo.gl/fQojwfE7yV3q2D3p8
 Happy Ride,"11.926629964122228, 79.82543756465223",,transport,scooty,https://maps.app.goo.gl/iWPeKH4k4cYs35rx6
 Star Two Wheeler,"11.927111285221786, 79.82761535730413",,transport,scooty,https://maps.app.goo.gl/dRPsyCNysshJAavp7
 Bala Two Wheeler,"11.928917312239202, 79.83083715638317",,transport,scooty,https://maps.app.goo.gl/9HvZi4LVoa17hK5v6
