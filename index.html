@@ -340,6 +340,121 @@
             border-radius: 50%;
         }
 
+        .help-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            cursor: pointer;
+            z-index: 1002;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .help-btn:hover {
+            background: #f5f5f5;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            animation: fadeIn 0.3s;
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            animation: slideIn 0.3s;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .modal-header h2 {
+            color: #667eea;
+            margin: 0;
+        }
+
+        .close-btn {
+            font-size: 28px;
+            font-weight: bold;
+            color: #999;
+            cursor: pointer;
+            border: none;
+            background: none;
+            transition: color 0.3s;
+        }
+
+        .close-btn:hover {
+            color: #333;
+        }
+
+        .modal-body {
+            line-height: 1.6;
+        }
+
+        .modal-body h3 {
+            color: #667eea;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .modal-body ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .modal-body li {
+            margin-bottom: 8px;
+        }
+
+        .visitor-counter {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+
         @media (max-width: 768px) {
 
             .header {
@@ -391,6 +506,19 @@
             #map {
                 width: 100%;
             }
+
+            .help-btn {
+                top: 10px;
+                right: 10px;
+                padding: 8px 12px;
+                font-size: 14px;
+            }
+            
+            .modal-content {
+                margin: 10% auto;
+                padding: 20px;
+                width: 95%;
+            }
         }
     </style>
 </head>
@@ -408,6 +536,55 @@
     
     <div class="container">
         <button class="toggle-btn" id="toggleBtn">☰</button>
+        <button class="help-btn" id="helpBtn">❓ Help</button>
+
+        <!-- Help Modal -->
+        <div id="helpModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>How to Use This Guide</h2>
+                    <button class="close-btn" id="closeModal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <h3>🗺️ Navigating the Map</h3>
+                    <ul>
+                        <li><strong>Zoom:</strong> Use the +/- buttons or scroll wheel to zoom in/out</li>
+                        <li><strong>Pan:</strong> Click and drag to move around the map</li>
+                        <li><strong>Markers:</strong> Click any colored marker to see details about that location</li>
+                    </ul>
+
+                    <h3>📱 Using the Sidebar</h3>
+                    <ul>
+                        <li><strong>Toggle Menu:</strong> Click the ☰ button to show/hide the sidebar</li>
+                        <li><strong>Search:</strong> Type in the search box to find specific places</li>
+                        <li><strong>Filters:</strong> Click category buttons to filter locations by type</li>
+                        <li><strong>Food Sub-filters:</strong> Click "Food" to see breakfast, lunch, dinner, and café options</li>
+                        <li><strong>Quick Navigate:</strong> Click any location in the list to jump to it on the map</li>
+                    </ul>
+
+                    <h3>🔗 Google Maps Links</h3>
+                    <ul>
+                        <li>Locations with a 🔗 icon can be clicked to open in Google Maps</li>
+                        <li>Get directions, reviews, and more information there</li>
+                    </ul>
+
+                    <h3>🎨 Color Legend</h3>
+                    <ul>
+                        <li><span style="color: #667eea;">●</span> Purple = Heritage sites</li>
+                        <li><span style="color: #f093fb;">●</span> Pink = Beaches</li>
+                        <li><span style="color: #4facfe;">●</span> Blue = Spiritual places</li>
+                        <li><span style="color: #43e97b;">●</span> Green = Nature spots</li>
+                        <li><span style="color: #ff6b6b;">●</span> Red = Food & Restaurants</li>
+                        <li><span style="color: #ffd93d;">●</span> Yellow = Hotels</li>
+                    </ul>
+
+                    <div class="visitor-counter">
+                        <p><strong>Total Visitors:</strong></p>
+                        <div id="visitorCounterContainer"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
         
         <div class="sidebar" id="sidebar">
             <div class="search-box">
@@ -747,10 +924,44 @@
             }
         });
 
+        // Help Modal functionality
+        const helpModal = document.getElementById('helpModal');
+        const helpBtn = document.getElementById('helpBtn');
+        const closeModal = document.getElementById('closeModal');
+
+        // Check if user has visited before
+        const hasVisited = localStorage.getItem('hasVisitedBefore');
+
+        // Show modal on first visit
+        if (!hasVisited) {
+            helpModal.style.display = 'block';
+            localStorage.setItem('hasVisitedBefore', 'true');
+        }
+
+        // Open modal when help button clicked
+        helpBtn.addEventListener('click', () => {
+            helpModal.style.display = 'block';
+        });
+
+        // Close modal when X clicked
+        closeModal.addEventListener('click', () => {
+            helpModal.style.display = 'none';
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === helpModal) {
+                helpModal.style.display = 'none';
+            }
+        });
+
+
 
         // Initial render
         renderLocations();
         
     </script>
+    <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=12a4297ad06c098294343d8f209600e34dd2f367'></script>
+    <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1486798/t/0"></script>
 </body>
 </html>
