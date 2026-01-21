@@ -9,11 +9,11 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6TWGJ03E6L"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-    gtag('config', 'G-6TWGJ03E6L');
+        gtag('config', 'G-6TWGJ03E6L');
     </script>
 
 
@@ -37,15 +37,17 @@
             --header-color: #333;
             --font-color: #666;
         }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: var(--secondary-color);
+            overflow: hidden; /* Prevent scrolling */
         }
         
         .header {
@@ -265,19 +267,19 @@
         }
         
         a:link {
-        color: #2bbfff;
+        /* color: #2bbfff; */
         background-color: transparent;
         text-decoration: none;
         }
 
         a:visited {
-        color: #2bbfff;
+        /* color: #2bbfff; */
         background-color: transparent;
         text-decoration: none;
         }
 
         a:hover {
-        color: cyan;
+        /* color: cyan; */
         background-color: transparent;
         text-decoration: underline;
         }
@@ -305,6 +307,13 @@
             text-decoration: none !important;
         }
 
+        .leaflet-control-zoom {
+            position: absolute;
+            top: 75px; 
+            right: 10px;
+            margin: 0 !important;
+        }
+
         .popup-content h3 {
             margin: 0 0 8px 0;
             color: var(--header-color);
@@ -320,7 +329,7 @@
         
         .legend {
             position: absolute;
-            bottom: 30px;
+            bottom: 10px;
             right: 10px;
             background: var(--primary-color);
             color: var(--font-color);
@@ -355,9 +364,9 @@
             position: absolute;
             top: 10px;
             right: 10px;
-            background: white;
+            background: var(--primary-color);
             border: none;
-            padding: 10px 15px;
+            padding: 15px 15px;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.2);
             cursor: pointer;
@@ -367,7 +376,7 @@
         }
 
         .help-btn:hover {
-            background: #f5f5f5;
+            background: var(--secondary-color);
         }
 
         .modal {
@@ -383,12 +392,12 @@
         }
 
         .modal-content {
-            background-color: white;
-            margin: 5% auto;
+            background-color: var(--primary-color);
+            margin: 10% auto;
             padding: 30px;
             border-radius: 12px;
             width: 90%;
-            max-width: 600px;
+            max-width: 700px;
             max-height: 80vh;
             overflow-y: auto;
             box-shadow: 0 4px 20px rgba(0,0,0,0.3);
@@ -397,19 +406,23 @@
 
         .modal-header {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             margin-bottom: 20px;
-            border-bottom: 2px solid #667eea;
+            border-bottom: 2px solid var(--accent1-color);
             padding-bottom: 10px;
+            position: relative;
         }
 
         .modal-header h2 {
-            color: #667eea;
+            color: var(--header-color);
             margin: 0;
+            text-align: center;
         }
 
         .close-btn {
+            position: absolute;
+            right: 0;
             font-size: 28px;
             font-weight: bold;
             color: #999;
@@ -428,7 +441,7 @@
         }
 
         .modal-body h3 {
-            color: #667eea;
+            color: var(--header-color);
             margin-top: 20px;
             margin-bottom: 10px;
         }
@@ -463,18 +476,18 @@
 
             .header {
                 background-image:url("assets/images/background_mobile.jpg") ;
-                padding: 15px;
+                padding: 12px;
                 text-align: center;
                 box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             }
             
             .header h1 {
-                font-size: 18px;
+                font-size: 14px;
                 margin-bottom: 0px;
             }
             
             .header p {
-                font-size: 12px;
+                font-size: 10px;
                 opacity: 0.9;
             }
 
@@ -529,11 +542,12 @@
 
 <body>
     <div class="header">
+        
         <div class="header-text-box">
             <h1>The Definitive Guide to Pondicherry</h1>
             <p> 
-                Created by <a href="https://www.reddit.com/r/pondicherry/"> r/pondicherry</a> 
-                <i class="fa fa-brands fa-reddit-alien"></i>
+                Created by <i class="fa fa-brands fa-reddit-alien"></i><strong><a style="color: #ff6600;" href="https://www.reddit.com/r/pondicherry/"> r/pondicherry</a></strong>
+                
             </p>
         </div>
     </div>
@@ -550,36 +564,15 @@
                     <button class="close-btn" id="closeModal">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <h3>🗺️ Navigating the Map</h3>
+                    <h3>Welcome!</h3>
+                    This website is a labour of love containing a curated list of recommendations from the community at
+                    <i class="fa fa-brands fa-reddit-alien"></i><a style="color: #ff6600;" href="https://www.reddit.com/r/pondicherry/"> r/pondicherry</a> 
+                    <br><br>
                     <ul>
-                        <li><strong>Zoom:</strong> Use the +/- buttons or scroll wheel to zoom in/out</li>
-                        <li><strong>Pan:</strong> Click and drag to move around the map</li>
+                        <li><strong>Map:</strong> Navigate the map and zoom in to see the location markers</li>
+                        <li><strong>Sidebar:</strong> Use the Toggle Button ☰ to access the Sidebar and search for locations</li>
                         <li><strong>Markers:</strong> Click any colored marker to see details about that location</li>
-                    </ul>
-
-                    <h3>📱 Using the Sidebar</h3>
-                    <ul>
-                        <li><strong>Toggle Menu:</strong> Click the ☰ button to show/hide the sidebar</li>
-                        <li><strong>Search:</strong> Type in the search box to find specific places</li>
-                        <li><strong>Filters:</strong> Click category buttons to filter locations by type</li>
-                        <li><strong>Food Sub-filters:</strong> Click "Food" to see breakfast, lunch, dinner, and café options</li>
-                        <li><strong>Quick Navigate:</strong> Click any location in the list to jump to it on the map</li>
-                    </ul>
-
-                    <h3>🔗 Google Maps Links</h3>
-                    <ul>
-                        <li>Locations with a 🔗 icon can be clicked to open in Google Maps</li>
-                        <li>Get directions, reviews, and more information there</li>
-                    </ul>
-
-                    <h3>🎨 Color Legend</h3>
-                    <ul>
-                        <li><span style="color: #667eea;">●</span> Purple = Heritage sites</li>
-                        <li><span style="color: #f093fb;">●</span> Pink = Beaches</li>
-                        <li><span style="color: #4facfe;">●</span> Blue = Spiritual places</li>
-                        <li><span style="color: #43e97b;">●</span> Green = Nature spots</li>
-                        <li><span style="color: #ff6b6b;">●</span> Red = Food & Restaurants</li>
-                        <li><span style="color: #ffd93d;">●</span> Yellow = Hotels</li>
+                        <li><strong>Google Maps:</strong> Locations with a 🔗 icon open in Google Maps</li>
                     </ul>
                 </div>
                 <div class="visitor-counter">
@@ -699,10 +692,10 @@
         // Calculate map center from locations
         const lats = locations.map(loc => loc.lat);
         const lngs = locations.map(loc => loc.lng);
-        const centreLat = (Math.min(...lats) + Math.max(...lats)) / 2;
-        const centreLng = (Math.min(...lngs) + Math.max(...lngs)) / 2;
-        //const centreLat = 11.936878344753454;
-        //const centreLng = 79.82499503746473;
+        //const centreLat = (Math.min(...lats) + Math.max(...lats)) / 2;
+        //const centreLng = (Math.min(...lngs) + Math.max(...lngs)) / 2;
+        const centreLat = 11.936878344753454;
+        const centreLng = 79.82499503746473;
         const boundsPad = 0.1;
 
         // Approximate bounds around Pondicherry with padding
@@ -714,10 +707,11 @@
         // Initialize map
         const map = L.map('map', {
             maxBounds: pondicherryBounds,
-            maxBoundsViscosity: 0.6 // Smooth resistance instead of hard stop
+            maxBoundsViscosity: 0.6,
+            attributionControl: false
         }).setView([centreLat, centreLng], 14);
         
-        // Set poistion of map zoom control
+        // Set position of map zoom control
         map.zoomControl.setPosition('topright');
 
         // Add OpenStreetMap tiles
