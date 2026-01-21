@@ -6,6 +6,17 @@
 
     <title>Guide to Pondicherry</title>
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6TWGJ03E6L"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-6TWGJ03E6L');
+    </script>
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
     <style>
@@ -431,13 +442,6 @@
             margin-bottom: 8px;
         }
 
-        .visitor-counter {
-            text-align: center;
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid #e0e0e0;
-        }
-
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -577,13 +581,11 @@
                         <li><span style="color: #ff6b6b;">●</span> Red = Food & Restaurants</li>
                         <li><span style="color: #ffd93d;">●</span> Yellow = Hotels</li>
                     </ul>
-
-                    <div class="visitor-counter">
-                        <p><strong>Total Visitors:</strong></p>
-                        <div id="visitorCounterContainer"></div>
-                        <div id="counterimg"></div>
-                        <a href='https://www.counters-free.net/'>Visitor Counters free</a>
-                    </div>
+                </div>
+                <div class="visitor-counter">
+                    <p style="font-size: 13px; color: #666;">
+                        <strong>📊 Analytics:</strong> This site uses Google Analytics to understand visitor behavior and improve your experience.
+                    </p>
                 </div>
             </div>
         </div>
@@ -963,7 +965,5 @@
         renderLocations();
         
     </script>
-    <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=12a4297ad06c098294343d8f209600e34dd2f367'></script>
-    <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1486798/t/0"></script>
 </body>
 </html>
