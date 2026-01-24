@@ -41,6 +41,15 @@ const locations = [
         "link": "https://maps.app.goo.gl/B3kJEqd767dVCGQg9"
     },
     {
+        "name": "Marbling Group",
+        "lat": 11.93527769970863,
+        "lng": 79.83573735892692,
+        "description": "The marbling unit of Sti Aurobindo Ashram produces sarees, scarves, dupattas and many more items on pure silk or pure silk. chiffon",
+        "category": "attraction",
+        "subCategory": "spiritual",
+        "link": "https://maps.app.goo.gl/ZN8NJM7cf1WLtuVA6"
+    },
+    {
         "name": "Sacred Heart Basilica",
         "lat": 11.926049828469404,
         "lng": 79.82696682838316,
@@ -75,6 +84,60 @@ const locations = [
         "category": "attraction",
         "subCategory": "spiritual",
         "link": "https://maps.app.goo.gl/yh56iKHtUPPopzdR8"
+    },
+    {
+        "name": "Arikamedu",
+        "lat": 11.901203042538668,
+        "lng": 79.82012221621407,
+        "description": "Ruins of a Roman trading post established in 2nd Century BCE.",
+        "category": "attraction",
+        "subCategory": "heritage",
+        "link": "https://maps.app.goo.gl/bBkLT4HD5Y8QrLpSA"
+    },
+    {
+        "name": "Mahakavi Bharathiyar Memorial Centre",
+        "lat": 11.939147810620522,
+        "lng": 79.83249610431182,
+        "description": "Museum in the former home of renowned writer & activist Mahakavi Bharathiyar, featuring historical artifacts & more.",
+        "category": "attraction",
+        "subCategory": "heritage",
+        "link": "https://maps.app.goo.gl/atD8GVM7edBhJr9t8"
+    },
+    {
+        "name": "Oussudu Lake (Ousteri Lake)",
+        "lat": 11.94195159241126,
+        "lng": 79.74677382656805,
+        "description": "An important wetlands and migratory location home to over 200 species of birds. Popular destination for birdwatchers!",
+        "category": "attraction",
+        "subCategory": "nature",
+        "link": "https://maps.app.goo.gl/Bgmt3aqsXz4WKLtg6"
+    },
+    {
+        "name": "Puducherry Museum",
+        "lat": 11.934484603007473,
+        "lng": 79.83486952558371,
+        "description": "Quaint museum known for its rare sculpture collection, including ancient bronze & stone artifacts.",
+        "category": "attraction",
+        "subCategory": "heritage",
+        "link": "https://maps.app.goo.gl/pKkYKaTzWmeRRS3M6"
+    },
+    {
+        "name": "Temple Adventures - Scuba Diving Experience Centre",
+        "lat": 11.923550915169445,
+        "lng": 79.82807786167832,
+        "description": "",
+        "category": "attraction",
+        "subCategory": "adventure",
+        "link": "https://maps.app.goo.gl/GZRbxkVf2CdWJb9b9"
+    },
+    {
+        "name": "Urban Nomad Dive Adventures & Watersports",
+        "lat": 11.931930238409869,
+        "lng": 79.83136562393732,
+        "description": "",
+        "category": "attraction",
+        "subCategory": "adventure",
+        "link": "https://maps.app.goo.gl/iSbeieoq72vqS9D78"
     },
     {
         "name": "Hotel Madurai Veedu",
