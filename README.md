@@ -1,4 +1,4 @@
-# Pondicherry Interactive Map
+# [Pondicherry Interactive Map](https://pondicherrywiki.github.io/Interactive-Map/)
 
 ## Welcome!
 
