@@ -307,13 +307,6 @@
             text-decoration: none !important;
         }
 
-        .leaflet-control-zoom {
-            position: absolute;
-            top: 75px; 
-            right: 10px;
-            margin: 0 !important;
-        }
-
         .popup-content h3 {
             margin: 0 0 8px 0;
             color: var(--header-color);
@@ -326,21 +319,45 @@
             line-height: 1.5;
             color: var(--font-color);
         }
-        
-        .legend {
+
+        /* Container for help button and legend */
+        .controls-container {
             position: absolute;
             bottom: 10px;
             right: 10px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px; 
+        }
+
+        .help-btn {
+            background: var(--primary-color);
+            border: none;
+            padding: 10px 28px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+            width: 100%; 
+            box-sizing: border-box;
+        }
+
+        .help-btn:hover {
+            background: var(--secondary-color);
+            transform: scale(1.05);
+        }
+
+        .legend {
             background: var(--primary-color);
             color: var(--font-color);
             padding: 15px;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            z-index: 1000;
             font-size: 13px;
-            display: block;
         }
-        
+
         .legend h4 {
             margin: 0 0 10px 0;
             font-size: 14px;
@@ -358,25 +375,6 @@
             height: 20px;
             margin-right: 8px;
             border-radius: 50%;
-        }
-
-        .help-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: var(--primary-color);
-            border: none;
-            padding: 15px 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-            cursor: pointer;
-            z-index: 1002;
-            font-size: 16px;
-            transition: all 0.3s;
-        }
-
-        .help-btn:hover {
-            background: var(--secondary-color);
         }
 
         .modal {
@@ -397,11 +395,28 @@
             padding: 30px;
             border-radius: 12px;
             width: 90%;
-            max-width: 700px;
+            max-width: 800px;
             max-height: 80vh;
             overflow-y: auto;
             box-shadow: 0 4px 20px rgba(0,0,0,0.3);
             animation: slideIn 0.3s;
+        }
+
+
+        .close-btn {
+            position: absolute;
+            right: 0;
+            font-size: 28px;
+            font-weight: bold;
+            color: #999;
+            cursor: pointer;
+            border: none;
+            background: none;
+            transition: color 0.3s;
+        }
+
+        .close-btn:hover {
+            color: #333;
         }
 
         .modal-header {
@@ -420,35 +435,19 @@
             text-align: center;
         }
 
-        .close-btn {
-            position: absolute;
-            right: 0;
-            font-size: 28px;
-            font-weight: bold;
-            color: #999;
-            cursor: pointer;
-            border: none;
-            background: none;
-            transition: color 0.3s;
-        }
-
-        .close-btn:hover {
-            color: #333;
+        .modal-body h3 {
+            color: var(--header-color);
+            margin-top: 2px;
+            margin-bottom: 10px;
         }
 
         .modal-body {
             line-height: 1.6;
         }
 
-        .modal-body h3 {
-            color: var(--header-color);
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-
         .modal-body ul {
             margin-left: 20px;
-            margin-bottom: 15px;
+            margin-bottom: 5px;
         }
 
         .modal-body li {
@@ -505,6 +504,10 @@
                 transform: translateX(0);
             }
 
+            .help-btn {
+                font-size: 12px;
+            }
+
             .legend h4 {
                 font-size: 12px;
             }
@@ -524,37 +527,38 @@
                 width: 100%;
             }
 
-            .help-btn {
-                top: 10px;
-                right: 10px;
-                padding: 8px 12px;
-                font-size: 14px;
+            .modal-header h2 {
+                font-size: 18px;
+            }
+
+            .modal-body h3 {
+                font-size: 16px;
             }
             
             .modal-content {
-                margin: 10% auto;
+                margin: 30% auto;
                 padding: 20px;
-                width: 95%;
+                width: 80%;
             }
+        
         }
     </style>
 </head>
 
 <body>
+    <!-- Header -->
     <div class="header">
-        
         <div class="header-text-box">
             <h1>The Definitive Guide to Pondicherry</h1>
             <p> 
                 Created by <i class="fa fa-brands fa-reddit-alien"></i><strong><a style="color: #ff6600;" href="https://www.reddit.com/r/pondicherry/"> r/pondicherry</a></strong>
-                
             </p>
         </div>
     </div>
     
+    <!-- Map Container -->
     <div class="container">
         <button class="toggle-btn" id="toggleBtn">☰</button>
-        <button class="help-btn" id="helpBtn">❓ Help</button>
 
         <!-- Help Modal -->
         <div id="helpModal" class="modal">
@@ -565,7 +569,7 @@
                 </div>
                 <div class="modal-body">
                     <h3>Welcome!</h3>
-                    This website is a labour of love containing a curated list of recommendations from the community at
+                    This website contains a curated list of recommendations from the community at
                     <i class="fa fa-brands fa-reddit-alien"></i><a style="color: #ff6600;" href="https://www.reddit.com/r/pondicherry/"> r/pondicherry</a> 
                     <br><br>
                     <ul>
@@ -575,14 +579,17 @@
                         <li><strong>Google Maps:</strong> Locations with a 🔗 icon open in Google Maps</li>
                     </ul>
                 </div>
+                <!--
                 <div class="visitor-counter">
                     <p style="font-size: 13px; color: #666;">
-                        <strong>📊 Analytics:</strong> This site uses Google Analytics to understand visitor behavior and improve your experience.
+                         <strong>📊 Analytics:</strong> This site uses Google Analytics to understand visitor behavior and improve your experience. 
                     </p>
                 </div>
+                -->
             </div>
         </div>
         
+        <!-- Sidebar -->
         <div class="sidebar" id="sidebar">
             <div class="search-box">
                 <input type="text" id="searchInput" placeholder="🔍 Search places...">
@@ -628,44 +635,59 @@
                 </div>
             </div>
             
+            <!-- Populate location list from js -->
             <div class="locations-list" id="locationsList"></div>
         </div>
         
+        <!-- Render map -->
         <div id="map"></div>
     </div>
-    
-    <div class="legend">
-        <h4>Categories</h4>
-        <div class="legend-item">
-            <div class="legend-icon" style="background: #ff6b6b;"></div>
-            <span>Food</span>
-        </div>
-        <div class="legend-item">
-            <div class="legend-icon" style="background: #9d4edd;"></div>
-            <span>Nightlife</span>
-        </div>
-        <div class="legend-item">
-            <div class="legend-icon" style="background: #4facfe;"></div>
-            <span>Beach</span>
-        </div>
-        <div class="legend-item">
-            <div class="legend-icon" style="background: #007627;"></div>
-            <span>Attraction</span>
-        </div>
-        <div class="legend-item">
-            <div class="legend-icon" style="background: #ffd93d;"></div>
-            <span>Transport</span>
-        </div>
-        <div class="legend-item">
-            <div class="legend-icon" style="background: #000000;"></div>
-            <span>Hotel</span>
+
+    <!-- Help and legend container, assigns colours -->
+    <div class="controls-container">
+        <button class="help-btn" id="helpBtn">❓ Help</button>
+        <div class="legend">
+            <h4>Categories</h4>
+            <div class="legend-item">
+                <div class="legend-icon" style="background: #ff6b6b;"></div>
+                <span>Food</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-icon" style="background: #9d4edd;"></div>
+                <span>Nightlife</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-icon" style="background: #4facfe;"></div>
+                <span>Beach</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-icon" style="background: #007627;"></div>
+                <span>Attraction</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-icon" style="background: #ffd93d;"></div>
+                <span>Transport</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-icon" style="background: #000000;"></div>
+                <span>Hotel</span>
+            </div>
         </div>
     </div>
 
+    <!-- Load location information -->
     <script src="assets/database/places.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-    <script>
 
+    <!-- Load map library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+
+    <!-- Main JS logic-->
+    <script>
+        /*
+            Locations are read before the map is initialised
+            to allow the possibility of calculating map centre
+            based on location latitude and longitudes.
+        */
         // Category color mapping
         const categoryColors = {
             beach: "#4facfe",
@@ -694,8 +716,12 @@
         const lngs = locations.map(loc => loc.lng);
         //const centreLat = (Math.min(...lats) + Math.max(...lats)) / 2;
         //const centreLng = (Math.min(...lngs) + Math.max(...lngs)) / 2;
+
+        // Manual lat and lng initialization
         const centreLat = 11.936878344753454;
         const centreLng = 79.82499503746473;
+
+        // Max bounds padding so user cannot pan away from the city
         const boundsPad = 0.1;
 
         // Approximate bounds around Pondicherry with padding
@@ -708,20 +734,19 @@
         const map = L.map('map', {
             maxBounds: pondicherryBounds,
             maxBoundsViscosity: 0.6,
-            attributionControl: false
         }).setView([centreLat, centreLng], 14);
         
         // Set position of map zoom control
         map.zoomControl.setPosition('topright');
 
         // Add OpenStreetMap tiles
+        // NOTE: Maps seem to be outdated compared to Google Maps
         /*
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© OpenStreetMap contributors',
             maxZoom: 19
         }).addTo(map);
         */
-
         L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
             subdomains: 'abcd',
@@ -737,7 +762,6 @@
                 iconAnchor: [12, 12]
             });
         };
-        
         
         // Store markers for easy access
         const markers = {};
@@ -765,6 +789,8 @@
         // Render locations list
         function renderLocations() {
             const listContainer = document.getElementById('locationsList');
+
+            // Matches location categories to filters
             const filtered = locations.filter(loc => {
                 let matchesCategory = false;
                 
@@ -781,11 +807,13 @@
                 return matchesCategory && matchesSearch;
             });
             
+            // Handle no results from search
             if (filtered.length === 0) {
                 listContainer.innerHTML = '<div class="no-results">No locations found</div>';
                 return;
             }
             
+            // Populates location list in sidebar based on selected filters or search query
             listContainer.innerHTML = filtered.map((loc, index) => {
                 const originalIndex = locations.indexOf(loc);
                 return `
@@ -810,6 +838,7 @@
             });
         }
 
+        // Filter and subfilter logic
         document.querySelectorAll('.filter-btn, .subfilter-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 const category = this.getAttribute('data-category');
@@ -817,7 +846,7 @@
                 const parentCategory = this.getAttribute('data-parent-category');
                 const subfilterId = this.getAttribute('data-subfilterId');
                 
-                // If clicking a parent filter (Food, Attraction, Transport)
+                // If clicking a parent filter 
                 if (isParent) {
                     // Remove active from ALL filter buttons
                     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -890,8 +919,7 @@
         // Toggle sidebar
         const toggleBtn = document.getElementById('toggleBtn');
         const sidebar = document.getElementById('sidebar');
-        //let sidebarOpen = window.innerWidth > 768; // Start collapsed on mobile
-        
+
         // Toggle sidebar
         toggleBtn.addEventListener('click', () => {
             if (window.innerWidth > 768) {
@@ -927,6 +955,7 @@
         const helpBtn = document.getElementById('helpBtn');
         const closeModal = document.getElementById('closeModal');
 
+        /* Does not show the modal if user has visited the site beforea
         // Check if user has visited before
         const hasVisited = localStorage.getItem('hasVisitedBefore');
 
@@ -935,6 +964,10 @@
             helpModal.style.display = 'block';
             localStorage.setItem('hasVisitedBefore', 'true');
         }
+        */
+
+        // Show modal on every page load
+        helpModal.style.display = 'block';
 
         // Open modal when help button clicked
         helpBtn.addEventListener('click', () => {
@@ -952,8 +985,6 @@
                 helpModal.style.display = 'none';
             }
         });
-
-
 
         // Initial render
         renderLocations();
